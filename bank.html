@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CoinFlow - Bank</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bank.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+
+    <button class="burger" id="burgerBtn">☰</button>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="logo">
+            <svg width="40" height="40" viewBox="0 0 40 40">
+                <circle cx="15" cy="20" r="8" fill="#5B7FFF" opacity="0.6"/>
+                <circle cx="25" cy="20" r="8" fill="#5B7FFF"/>
+            </svg>
+            <h1>CoinFlow</h1>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item">Dashboard</a>
+            <a href="tasks.html" class="nav-item">Tasks</a>
+            <a href="marketplace.html" class="nav-item">Marketplace</a>
+            <a href="transactions.html" class="nav-item">Transactions</a>
+            <a href="bank.html" class="nav-item active">Bank</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <header class="header">
+            <h2 class="page-title">Bank Loan</h2>
+        </header>
+
+        <div class="bank-content">
+
+            <div class="loan-card">
+
+                <h4 class="mb-4">Take Loan</h4>
+
+                <div class="mb-3">
+                    <label class="form-label">Loan Amount</label>
+                    <input type="number" id="loanAmount" class="form-control" placeholder="Enter coins">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Number of Days</label>
+                    <input type="number" id="loanDays" class="form-control" placeholder="Enter days">
+                </div>
+
+                <div class="loan-summary">
+                    <p>Interest Rate: <span id="interestRate">--</span></p>
+                    <p>Total Payable: <span id="totalPayable">--</span></p>
+                    <p>Due Date: <span id="dueDate">--</span></p>
+                </div>
+
+                <button class="btn btn-primary w-100 mt-3" id="takeLoanBtn">
+                    Take Loan
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script type="module" src="protect.js"></script>
+<script type="module" src="bank.js"></script>
+<script>
+    const burger = document.getElementById("burgerBtn");
+    const sidebar = document.getElementById("sidebar");
+
+    burger.addEventListener("click", () => {
+        sidebar.classList.toggle("show");
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #222;
+}
+
+/* ===== LAYOUT ===== */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ===== BURGER ===== */
+.burger {
+    display: none;
+    position: fixed;
+    top: 18px;
+    left: 18px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1200;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    width: 250px;
+    background: #ffffff;
+    padding: 20px;
+    border-right: 1px solid #eee;
+    transition: transform 0.3s ease;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.logo h1 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-item {
+    padding: 12px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #555;
+    margin-bottom: 10px;
+    transition: 0.2s ease;
+}
+
+.nav-item:hover {
+    color: #5B7FFF;
+}
+
+.nav-item.active {
+    color: #5B7FFF;
+    font-weight: 600;
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-content {
+    flex: 1;
+    padding: 40px;
+}
+
+
+/* ===== HEADER ===== */
+.header {
+    margin-bottom: 30px;
+}
+
+.page-title {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+/* ===== BANK SECTION ===== */
+.bank-content {
+    max-width: 500px;
+    margin: 40px auto;
+}
+
+
+.loan-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.loan-summary {
+    background: #f1f4ff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.loan-summary p {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+    .burger {
+        display: block;
+    }
+
+    .sidebar {
+        position: fixed;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        transform: translateX(-100%);
+        z-index: 1100;
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        padding: 20px;
+        width: 100%;
+    }
+
+    .bank-content {
+        width: 100%;
+        margin: 20px auto;
+        padding: 0 10px;
+    }
+
+
+}

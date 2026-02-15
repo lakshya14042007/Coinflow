@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Marketplace</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="admin-container">
+    <header class="admin-header">
+      <h1>Admin Panel</h1>
+      <p>Add new products to marketplace</p>
+    </header>
+
+    <div class="admin-content">
+      <form id="productForm" class="product-form">
+
+        <div class="form-group">
+          <label for="titleInput">Product Title</label>
+          <input 
+            type="text" 
+            id="titleInput" 
+            placeholder="Enter product title" 
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="episodeTimeInput">Episode/Time</label>
+          <input 
+            type="text" 
+            id="episodeTimeInput" 
+            placeholder="e.g., 45 Episodes or 2h 30m" 
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="priceInput">Price</label>
+          <input 
+            type="number" 
+            id="priceInput" 
+            placeholder="Enter price" 
+            step="0.01" 
+            min="0" 
+            required
+          >
+        </div>
+
+        <button type="submit" id="addProductBtn" class="btn-primary">
+          <span class="btn-text">Add Product</span>
+          <span class="btn-loader"></span>
+        </button>
+
+      </form>
+
+      <div id="successMessage" class="success-message">
+        <svg class="success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        <span>Product added successfully!</span>
+      </div>
+
+      <div id="errorMessage" class="error-message">
+        <svg class="error-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="15" y1="9" x2="9" y2="15"></line>
+          <line x1="9" y1="9" x2="15" y2="15"></line>
+        </svg>
+        <span id="errorText">An error occurred</span>
+      </div>
+
+    </div>
+  </div>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

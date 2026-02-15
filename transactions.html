@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoinFlow - Transactions</title>
+    <link rel="stylesheet" href="transactions.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <button class="burger" id="burgerBtn">☰</button>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <h1>CoinFlow</h1>
+            </div>
+
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item">Dashboard</a>
+            <a href="tasks.html" class="nav-item">Tasks</a>
+            <a href="marketplace.html" class="nav-item">Marketplace</a>
+            <a href="transactions.html" class="nav-item">Transactions</a>
+            <a href="bank.html" class="nav-item">Bank</a>
+        </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <header class="header">
+                <h2 class="page-title">Transactions</h2>
+
+                <div class="header-right">
+                    <!-- Future: filter dropdown yahan aa sakta hai -->
+                </div>
+            </header>
+
+            <div class="transactions-content">
+
+                <!-- Balance Section -->
+                <div class="balance-card">
+                    <h4>Total Balance</h4>
+                    <p id="totalBalance">0</p>
+                </div>
+
+                <!-- Transaction Table -->
+                <div class="transaction-table">
+
+                    <div class="table-header">
+                        <div class="th-type">Type</div>
+                        <div class="th-details">Details</div>
+                        <div class="th-amount">Amount</div>
+                        <div class="th-date">Date</div>
+                    </div>
+
+                    <!-- Dynamic Data Inject Area -->
+                    <div class="table-body" id="transactionList">
+                        <!-- JS yahan transaction-row inject karega -->
+                    </div>
+
+                </div>
+
+                <!-- Empty State -->
+                <div class="empty-state d-none" id="emptyState">
+                    <p>No transactions found.</p>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="protect.js"></script>
+    <script type="module" src="transactions.js"></script>
+
+    <script>
+        const burger = document.getElementById("burgerBtn");
+        const sidebar = document.getElementById("sidebar");
+
+        burger.addEventListener("click", () => {
+            sidebar.classList.toggle("show");
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

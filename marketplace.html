@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoinFlow - Marketplace</title>
+    <link rel="stylesheet" href="marketplace.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <button class="burger" id="burgerBtn">☰</button>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <h1>CoinFlow</h1>
+            </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item">Dashboard</a>
+            <a href="tasks.html" class="nav-item">Tasks</a>
+            <a href="marketplace.html" class="nav-item">Marketplace</a>
+            <a href="transactions.html" class="nav-item">Transactions</a>
+            <a href="bank.html" class="nav-item">Bank</a>
+        </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h2 class="page-title">Marketplace</h2>
+                <div class="header-right">
+                    <div class="balance-badge">
+                        <span>Your Balance:</span>
+                        <strong id="userBalance">0</strong>
+                    </div>
+                </div>
+            </header>
+
+            <div class="marketplace-content">
+                <div class="products-grid" id="productsGrid">
+                    
+                    <!-- 🔥 Products will load here dynamically from Firebase -->
+
+                </div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="protect.js"></script>
+    <script type="module" src="marketplace.js"></script>
+    <script>
+        const burger = document.getElementById("burgerBtn");
+        const sidebar = document.getElementById("sidebar");
+
+        burger.addEventListener("click", () => {
+            sidebar.classList.toggle("show");
+        });
+    </script>
+</body>
+</html>

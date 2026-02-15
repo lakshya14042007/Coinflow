@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoinFlow - Tasks</title>
+    <link rel="stylesheet" href="tasks.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <button class="burger" id="burgerBtn">
+            ☰
+        </button>
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <circle cx="15" cy="20" r="8" fill="#5B7FFF" opacity="0.6"/>
+                    <circle cx="25" cy="20" r="8" fill="#5B7FFF"/>
+                </svg>
+                <h1>CoinFlow</h1>
+            </div>
+         <nav class="nav-menu">
+            <a href="index.html" class="nav-item">Dashboard</a>
+            <a href="tasks.html" class="nav-item">Tasks</a>
+            <a href="marketplace.html" class="nav-item">Marketplace</a>
+            <a href="transactions.html" class="nav-item">Transactions</a>
+            <a href="bank.html" class="nav-item">Bank</a>
+        </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h2 class="page-title">Tasks</h2>
+                <div class="header-right">
+                    <button class="btn-primary" id="mainaddTaskBtn">+ Add Task</button>
+                    <div class="user-avatar">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%23555'/%3E%3C/svg%3E" alt="User">
+                    </div>
+                </div>
+            </header>
+
+            <div class="tasks-content">
+                <!-- Tabs -->
+                <div class="tabs">
+                    <button class="tab active" data-tab="pending">Pending</button>
+                    <button class="tab" data-tab="completed">Completed</button>
+                </div>
+
+            <!-- Pending -->
+            <div class="tab-content active" id="pending">
+                <div class="tasks-grid" id="pendingTasks"></div>
+            </div>
+
+            <!-- Completed -->
+            <div class="tab-content" id="completed">
+                <div class="tasks-grid" id="completedTasks"></div>
+            </div>
+
+
+            </div>
+        </main>
+    </div>
+
+<div class="newtask" id="newtask">
+
+    <div class="cross">
+        <span class="star" id="starBtn">&#9734;</span>  
+        <span class="closeBtn" id="closeBtn">&times;</span>
+    </div>
+
+    <div class="inputs">
+        <label for="taskTitle">Enter Task Title</label>
+        <input type="text" class="taskinp" id="taskTitle" name="taskTitle" placeholder="Enter task title">
+    </div>
+
+    <div class="inputs">
+        <label for="taskDetails">Enter Task Details</label>
+        <input type="text" class="taskinp" id="taskDetails" name="taskDetails" placeholder="Enter task details">
+    </div>
+
+    <div class="inputs">
+        <label for="coinAmount">Enter Coin Amount</label>
+        <input type="number" class="taskinp" id="coinAmount" name="coinAmount" placeholder="Enter coins">
+    </div>
+
+    <button type="button" id="addTaskBtn">Add Task</button>
+
+
+</div>
+
+    <script type="module" src="protect.js"></script>
+    <script type="module" src="tasks.js"></script>
+    <script>
+        const burger = document.getElementById("burgerBtn");
+        const sidebar = document.getElementById("sidebar");
+
+        burger.addEventListener("click", () => {
+            sidebar.classList.toggle("show");
+        });
+    </script>    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
